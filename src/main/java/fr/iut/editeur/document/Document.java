@@ -46,7 +46,7 @@ public class Document {
 
     public void effacer(int start, int end) {
         if (start < 0 || end > texte.length() || start >= end) {
-            throw new IllegalArgumentException("Indices de départ ou de fin invalides.");
+            throw new IllegalArgumentException("Indices de dépar ou de fin invalides.");
         }
 
         String leftPart = texte.substring(0, start);
