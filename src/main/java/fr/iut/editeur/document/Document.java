@@ -54,6 +54,10 @@ public class Document {
         texte = leftPart + rightPart;
     }
 
+    public void clear() {
+        texte = "";
+    }
+
 
 
 }
