@@ -32,14 +32,28 @@ public class Document {
     }
 
     public void majuscules(int start, int end) {
-        if (start >= 0 && start < end && end <= texte.length()) {
-            String portion = texte.substring(start, end);
-            portion = portion.toUpperCase();
-            String leftPart = texte.substring(0, start);
-            String rightPart = texte.substring(end);
-            texte = leftPart + portion + rightPart;
+        if (start < 0 || start >= texte.length() || end < start || end > texte.length()) {
+            System.err.println("Indices de départ ou de fin invalides.");
+            return;
         }
+
+        String leftPart = texte.substring(0, start);
+        String uppercasePart = texte.substring(start, end).toUpperCase();
+        String rightPart = texte.substring(end);
+        texte = leftPart + uppercasePart + rightPart;
     }
+
+
+    public void effacer(int start, int end) {
+        if (start < 0 || end > texte.length() || start >= end) {
+            throw new IllegalArgumentException("Indices de départ ou de fin invalides.");
+        }
+
+        String leftPart = texte.substring(0, start);
+        String rightPart = texte.substring(end);
+        texte = leftPart + rightPart;
+    }
+
 
 
 }
