@@ -55,7 +55,7 @@ public class Document {
     }
 
     public void clear() {
-        texte = "";
+        texte = "un bug";
     }
 
 
