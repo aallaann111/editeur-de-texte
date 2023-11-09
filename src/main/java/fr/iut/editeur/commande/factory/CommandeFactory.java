@@ -31,8 +31,8 @@ public class CommandeFactory {
                 return new CommandeMajuscules(document, parameters);
             case "inserer":
                 return new CommandeInserer(document, parameters);
-            case "minuscules":
-                return new CommandeMinuscules(document, parameters);
+            case "minuscule":
+                return new CommandeMinuscule(document, parameters);
             default:
                 return null;
         }
