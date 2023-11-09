@@ -32,15 +32,17 @@ public class Document {
     }
 
     public void majuscules(int start, int end) {
-        if (start < 0 || start >= texte.length() || end < start || end > texte.length()) {
-            System.err.println("Indices de départ ou de fin invalides.");
-            return;
-        }
-
         String leftPart = texte.substring(0, start);
         String uppercasePart = texte.substring(start, end).toUpperCase();
         String rightPart = texte.substring(end);
         texte = leftPart + uppercasePart + rightPart;
+    }
+
+    public void minuscules(int start, int end) {
+        String leftPart = texte.substring(0, start);
+        String lowerCase = texte.substring(start, end).toLowerCase();
+        String rightPart = texte.substring(end);
+        texte = leftPart + lowerCase + rightPart;
     }
 
 
@@ -64,6 +66,4 @@ public class Document {
 
         texte = leftPart + insertion + rightPart;
     }
-
-
 }
