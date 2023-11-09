@@ -2,68 +2,68 @@ package fr.iut.editeur.document;
 
 public class Document {
 
-    private String texte;
+    private String texteDocument;
 
     public Document() {
-        this.texte = "";
+        this.texteDocument = "";
     }
 	
     public String getTexte() {
-        return texte;
+        return texteDocument;
     }
 
     public void setTexte(String texte) {
-        this.texte = texte;
+        this.texteDocument = texte;
     }
 
     public void ajouter(String texte) {
-        this.texte += texte;
+        this.texteDocument += texte;
     }
 
     @Override
     public String toString() {
-        return this.texte;
+        return this.texteDocument;
     }
 
     public void remplacer(int start, int end, String remplacement) {
-        String leftPart = texte.substring(0, start);
-        String rightPart = texte.substring(end);
-        texte = leftPart + remplacement + rightPart;
+        String leftPart = texteDocument.substring(0, start);
+        String rightPart = texteDocument.substring(end);
+        texteDocument = leftPart + remplacement + rightPart;
     }
 
     public void majuscules(int start, int end) {
-        String leftPart = texte.substring(0, start);
-        String uppercasePart = texte.substring(start, end).toUpperCase();
-        String rightPart = texte.substring(end);
-        texte = leftPart + uppercasePart + rightPart;
+        String leftPart = texteDocument.substring(0, start);
+        String uppercasePart = texteDocument.substring(start, end).toUpperCase();
+        String rightPart = texteDocument.substring(end);
+        texteDocument = leftPart + uppercasePart + rightPart;
     }
 
     public void minuscule(int start, int end) {
-        String leftPart = texte.substring(0, start);
-        String lowerCase = texte.substring(start, end).toLowerCase();
-        String rightPart = texte.substring(end);
-        texte = leftPart + lowerCase + rightPart;
+        String leftPart = texteDocument.substring(0, start);
+        String lowerCase = texteDocument.substring(start, end).toLowerCase();
+        String rightPart = texteDocument.substring(end);
+        texteDocument = leftPart + lowerCase + rightPart;
     }
 
 
     public void effacer(int start, int end) {
-        if (start < 0 || end > texte.length() || start >= end) {
+        if (start < 0 || end > texteDocument.length() || start >= end) {
             throw new IllegalArgumentException("Indices de dépar ou de fin invalides.");
         }
 
-        String leftPart = texte.substring(0, start);
-        String rightPart = texte.substring(end);
-        texte = leftPart + rightPart;
+        String leftPart = texteDocument.substring(0, start);
+        String rightPart = texteDocument.substring(end);
+        texteDocument = leftPart + rightPart;
     }
 
     public void clear() {
-        texte = "";
+        texteDocument = "";
     }
 
     public void inserer(int start, String insertion) {
-        String leftPart = texte.substring(0, start);
-        String rightPart = texte.substring(start);
+        String leftPart = texteDocument.substring(0, start);
+        String rightPart = texteDocument.substring(start);
 
-        texte = leftPart + insertion + rightPart;
+        texteDocument = leftPart + insertion + rightPart;
     }
 }
