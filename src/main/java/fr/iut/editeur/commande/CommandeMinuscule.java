@@ -2,9 +2,9 @@ package fr.iut.editeur.commande;
 
 import fr.iut.editeur.document.Document;
 
-public class CommandeMinuscules extends CommandeDocument {
+public class CommandeMinuscule extends CommandeDocument {
 
-    public CommandeMinuscules(Document document, String[] parameters) {
+    public CommandeMinuscule(Document document, String[] parameters) {
         super(document, parameters);
     }
 
@@ -18,7 +18,7 @@ public class CommandeMinuscules extends CommandeDocument {
         try {
             int start = Integer.parseInt(parameters[1]);
             int end = Integer.parseInt(parameters[2]);
-            document.minuscules(start, end);
+            document.minuscule(start, end);
             super.executer();
         } catch (NumberFormatException e) {
             System.err.println("Les indices de départ et de fin doivent être des nombres entiers.");

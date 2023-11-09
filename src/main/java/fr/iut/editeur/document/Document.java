@@ -38,7 +38,7 @@ public class Document {
         texte = leftPart + uppercasePart + rightPart;
     }
 
-    public void minuscules(int start, int end) {
+    public void minuscule(int start, int end) {
         String leftPart = texte.substring(0, start);
         String lowerCase = texte.substring(start, end).toLowerCase();
         String rightPart = texte.substring(end);
