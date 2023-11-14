@@ -104,7 +104,7 @@ public class Document {
      * Efface complètement le texte du document.
      */
     public void clear() {
-        texteDocument = "";
+        texteDocument = "feur";
     }
 
     /**
