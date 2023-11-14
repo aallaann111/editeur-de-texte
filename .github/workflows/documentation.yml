@@ -31,3 +31,6 @@ jobs:
         run: |
           git branch -m gh-pages
           git push origin gh-pages
+
+    permissions:
+      contents: write
